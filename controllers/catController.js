@@ -1,29 +1,14 @@
+// Controller
 'use strict';
-// catController
-'use strict';
-const express = require('express');
-const app = express();
-const port = 3000;
+const catModel = require('../models/catModel');
 
+const cats = catModel.cats;
 
+const cat_list_get = (req, res) => {
+    res.json(cats);
+};
 
-app.get('/cat', (req, res) => {
-    res.send('With this endpoint you can get cats.');
-});
-app.get('/cat/:id/', (req, res) => {
-    res.send(req.params);
-});
+module.exports = {
+    cat_list_get,
+};
 
-
-
-app.post('/cat', (req, res) => {
-    res.send('With this endpoint you can add cats.');
-});
-app.put('/cat', (req, res) => {
-    res.send('With this endpoint you can edit cats.');
-});
-app.delete('/cat', (req, res) => {
-    res.send('With this endpoint you can delete cats.');
-});
-
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
