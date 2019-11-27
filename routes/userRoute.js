@@ -5,15 +5,16 @@ const port = 3000;
 const router = express.Router();
 const userController = require('../controllers/userController.js');
 
+
 router.get('/', userController.user_list_get);
 
 module.exports = router;
 
 app.get('/user', (req, res) => {
-    res.send(userController.user_list_get(req,res));
+    res.send(userController.user_list_get(req, res));
 });
 app.get('/user/:id/', (req, res) => {
-    res.send(userController.user_get(req.params.id,res));
+    res.send(userController.user_get(req.params.id, res));
 });
 
 

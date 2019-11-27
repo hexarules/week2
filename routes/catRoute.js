@@ -10,10 +10,10 @@ router.get('/', catController.cat_list_get);
 module.exports = router;
 
 app.get('/cat', (req, res) => {
-    res.send(catController.cat_list_get(req,res));
+    res.send(catController.cat_list_get(req, res));
 });
 app.get('/cat/:id/', (req, res) => {
-    res.send(catController.cat_get(req.params.id,res));
+    res.send(catController.cat_get(req.params.id, res));
 });
 
 
