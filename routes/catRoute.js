@@ -7,7 +7,6 @@ const catController = require('../controllers/catController.js');
 
 router.get('/', catController.cat_list_get);
 
-module.exports = router;
 
 app.get('/cat', (req, res) => {
     res.send(catController.cat_list_get(req, res));
@@ -27,4 +26,6 @@ app.delete('/cat', (req, res) => {
     res.send('With this endpoint you can delete cats.');
 });
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
+
+module.exports = router;
