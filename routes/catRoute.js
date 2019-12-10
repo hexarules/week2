@@ -10,15 +10,15 @@ router.get('/', catController.cat_list_get);
 router.get('/:id', catController.cat_get);
 
 router.post('/', upload.single('cat'), (req, res, next) => {
-    console.log("cat file", req.file, req.filename);
+    catController.addCat(req,res);
 
 
 });
 router.put('/cat', (req, res) => {
-    res.send('With this endpoint you can edit cats.');
+    res.send(catController.putCat);
 });
 router.delete('/cat', (req, res) => {
-    res.send('With this endpoint you can delete cats.');
+    res.send(catController.deleteCat);
 });
 
 module.exports = router;
